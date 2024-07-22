@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Practice/styles.css">
+</head>
+<body>
+    <div id="main">
+        Setting the width of a block-level element will prevent it from stretching out to the edges of its container to the left and right. Then, you can set the left and right margins to auto to horizontally center that element within its container. The element will take up the width you specify, then the remaining space will be split evenly between the two margins.
+
+The only problem occurs when the browser window is narrower than the width of your element. The browser resolves this by creating a horizontal scrollbar on the page. Let's improve the situation...
+    </div>
+    <div class="static">
+        static is the default value. An element with position: static; is not positioned in any special way. A static element is said to be not positioned and an element with its position set to anything else is said to be positioned.
+    </div>
+    <div class="relative1">
+        relative behaves the same as static unless you add some extra properties.
+    </div>
+    <div class="relative2">
+        Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+    </div>
+    <div class="fixed">
+        I'm sure you've noticed that fixed element in the lower-right hand corner of the page. I'm giving you permission to pay attention to it now. Here is the CSS that puts it there:
+    </div>
+    <div class="relative">
+        This element is relatively-positioned. If this element was position: static; its absolutely-positioned child would escape and would be positioned relative to the document body.
+        <div class="absolute">This element is absolutely-positioned. It's positioned relative to its parent.</div>
+    </div>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li>Home</li>
+                <li>Taco Menu</li>
+                <li>Draft List</li>
+                <li>Hours</li>
+                <li>Directions</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <section class="section1">
+            The margin-left style for sections makes sure there is room for the nav. Otherwise the absolute and static elements would overlap
+        </section>
+        <section class="section1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+        </section>
+        <section class="section1">
+            Notice what happens when you resize your browser. It works nicely!
+        </section>
+</div>
+<div class="cats">
+    <img src="cat.jpeg" alt="cat">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    
+</div>
+
+<div class="box">
+    I feel like I'm floating!
+</div>
+<section class="section2">
+    In this case, the section element is actually after the div. However, since the div is floated to the left, this is what happens: the text in the section is floated around the div and the section surrounds the whole thing. What if we wanted the section to actually appear after the floated element?
+</section>
+
+<div class="spacer">
+
+</div>
+<div class="box1">
+    I feel like I'm floating!
+</div>
+<section class="after-box">
+    Using clear we have now moved this section down below the floated div. You use the value left to clear elements floated to the left. You can also clear right and both.
+</section>
+
+<div class="beforeclearfix">
+    <img class="cat2" src="cat.jpeg" alt="">
+    Uh oh... this image is taller than the element containing it, and it's floated, so it's overflowing outside of its container!
+</div>
+
+<div class="clearfix">
+    <img class="cat2" src="cat.jpeg" alt="">
+    Fixed!
+</div>
+<div class="clearfix">
+    <nav class="nav1">
+        <ul>
+            <li>Home</li>
+            <li>Taco Menu</li>
+            <li>Draft List</li>
+            <li>Hours</li>
+            <li>Directions</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <section class="section2">
+        This example works just like the last one. Notice we put a clearfix on the container. It's not needed in this example, but it would be if the nav was longer than the non-floated content
+    </section>
+    <section class="section2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </section>
+</div>
+    <div>
+        <article class="clearfix">
+            <img src="cat.jpeg" alt="">
+            You could even use min-width and max-width to limit how big or small the image can get!
+        </article>
+    </div>
+
+    <div class="container">
+    <nav class="nav2">
+        <ul>
+            <li class="li">Home</li>
+            <li class="li">Taco Menu</li>
+            <li class="li">Draft List</li>
+            <li class="li">Hours</li>
+            <li class="li">Directions</li>
+            <li class="li">Contact</li>
+        </ul>
+    </nav>
+    <section class="section3">
+        Now when you resize your browser it's even cooler than ever!
+    </section>
+    <section class="section3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </section>
+</div>
+
+</body>
+</html>
